@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace QLSinhVienThucTap.GUI
 {
-    public partial class Form1 : Form
+    public partial class frmHome : Form
     {
         private TaiKhoan user;
         public TaiKhoan User
@@ -20,7 +20,7 @@ namespace QLSinhVienThucTap.GUI
             set { user = value; changeAccount(user.VaiTro); }
         }
 
-        public Form1(TaiKhoan TaiKhoan)
+        public frmHome(TaiKhoan TaiKhoan)
         {
             InitializeComponent();
             this.User = TaiKhoan;
@@ -33,17 +33,17 @@ namespace QLSinhVienThucTap.GUI
 
         private void tsmChangePassword_Click(object sender, EventArgs e)
         {
-            DoiMatKhau doiMatKhau = new DoiMatKhau(User.TenDangNhap);
+            frmDoiMatKhau doiMatKhau = new frmDoiMatKhau(User.TenDangNhap);
             doiMatKhau.ShowDialog();
         }
 
         private void tsmAccountProfile_Click(object sender, EventArgs e)
         {
-            ThongTinCaNhan thongTinCaNhan = new ThongTinCaNhan(User);
+            frmThongTinCaNhan thongTinCaNhan = new frmThongTinCaNhan(User);
             thongTinCaNhan.UpdateProfile += ThongTinCaNhan_UpdateProfile;
             thongTinCaNhan.ShowDialog();
         }
-        private void ThongTinCaNhan_UpdateProfile(object sender, ThongTinCaNhan.UpdateProfileEventArgs e)
+        private void ThongTinCaNhan_UpdateProfile(object sender, frmThongTinCaNhan.UpdateProfileEventArgs e)
         {
             this.User = e.User;
             tsmAccountProfile.Text = "Thông tin cá nhân (" + User.TenNguoiDung + ")";

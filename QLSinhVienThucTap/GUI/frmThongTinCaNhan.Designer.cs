@@ -1,6 +1,6 @@
 ﻿namespace QLSinhVienThucTap.GUI
 {
-    partial class ThongTinCaNhan
+    partial class frmThongTinCaNhan
     {
         /// <summary>
         /// Required designer variable.

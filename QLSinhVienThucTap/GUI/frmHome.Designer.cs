@@ -1,6 +1,6 @@
 ﻿namespace QLSinhVienThucTap.GUI
 {
-    partial class Form1
+    partial class frmHome
     {
         /// <summary>
         /// Required designer variable.

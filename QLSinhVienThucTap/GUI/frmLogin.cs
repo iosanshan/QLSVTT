@@ -20,7 +20,7 @@ namespace QLSinhVienThucTap
             if (TaiKhoanBLL.Login(username, password))
             {
                 TaiKhoan loginAccount = TaiKhoanDAL.Instance.GetAccountByUserName(username);
-                Form1 form1 = new Form1(loginAccount);
+                frmHome form1 = new frmHome(loginAccount);
                 this.Hide();
                 form1.ShowDialog();
                 this.Show(); // Show the login form again when Form1 is closed
@@ -32,7 +32,7 @@ namespace QLSinhVienThucTap
         }
         private void Login_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (MessageBox.Show("Bạn có thực sự muốn thoát chương trình?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+            if (MessageBox.Show("Bạn có  muốn thoát chương trình?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
             {
                 e.Cancel = true;
             }
